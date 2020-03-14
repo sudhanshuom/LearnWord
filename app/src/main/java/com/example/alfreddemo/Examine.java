@@ -11,40 +11,60 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Examine extends Fragment {
+    LinearLayout loginWindow;
 
-    LinearLayout status;
     public Examine(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.learn, container, false);
+        View view = inflater.inflate(R.layout.examine, container, false);
         TextView startnum = view.findViewById(R.id.startnumber);
-        status = view.findViewById(R.id.status);
+        loginWindow = view.findViewById(R.id.status);
 
-        SharedPreferences sh = this.getActivity().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
-        String s1 = sh.getString("user", "null");
-        if(s1 == null){
-            status.setVisibility(View.VISIBLE);
+        SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String user = sh.getString("user", "");
 
-            status.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(getContext(), LogIn.class));
-                }
-            });
+        if(user.equals("")){
+            loginWindow.setVisibility(View.VISIBLE);
         }
+
+        loginWindow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), LogIn.class));
+            }
+        });
 
         startnum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), Examine2.class));
+                Fragment fragment = new Examine2();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().add(R.id.host_view_examine, fragment).commit();
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String user = sh.getString("user", "");
+
+        if(user.equals("")){
+            loginWindow.setVisibility(View.VISIBLE);
+        }else{
+            loginWindow.setVisibility(View.GONE);
+        }
     }
 
 }

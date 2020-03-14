@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    android:focusable="true">
 
     <LinearLayout
         android:id="@+id/status"
@@ -11,16 +14,17 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
+            android:id="@+id/stats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
             android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Box to sign in or create an account"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
     </LinearLayout>
 
@@ -138,7 +142,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You have mastered 1 out of 51 words"
+        android:text="You have mastered 10 out of 50 words"
         android:layout_marginTop="10dp"/>
 
     <RelativeLayout
@@ -147,6 +151,7 @@
         android:layout_marginTop="10dp">
 
         <View
+            android:id="@+id/ref"
             android:layout_width="match_parent"
             android:layout_height="15dp"
             android:background="@drawable/rectangle"/>
@@ -165,7 +170,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You are reviewing 1 out of 51 words"
+        android:text="You are reviewing 20 out of 50 words"
         android:layout_marginTop="10dp"/>
 
     <RelativeLayout
@@ -192,7 +197,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You are learning 1 out of 51 words"
+        android:text="You are learning 50 out of 50 words"
         android:layout_marginTop="10dp"/>
 
     <RelativeLayout
@@ -215,6 +220,5 @@
             android:layout_margin="1dp"/>
 
     </RelativeLayout>
-
 
 </LinearLayout>

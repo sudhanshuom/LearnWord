@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-      <TextView
-          xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/city"
-        android:layout_gravity="center"
-        android:background="#00ff56"
-        android:checked="false"
-        android:checkMarkTint="@color/colorAccent"
-      />
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/city"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00ff56"
+    android:checkMarkTint="@color/colorAccent"
+    android:checked="false"
+    android:padding="5dp"
+    android:text="XXXXXX"
+    android:textSize="18dp" />

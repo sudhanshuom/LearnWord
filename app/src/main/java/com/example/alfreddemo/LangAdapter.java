@@ -34,7 +34,7 @@ public class LangAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup parent) {
         if(view == null) {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = LayoutInflater.from(mContext).inflate(R.layout.grid_itemrow,parent,  false);
+            view = LayoutInflater.from(mContext).inflate(R.layout.grid_itemrow, parent,  false);
         }
         TextView city = (TextView) view.findViewById(R.id.city);
         city.setText(mThumbIds[position]);

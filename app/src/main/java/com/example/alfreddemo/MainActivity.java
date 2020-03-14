@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         if(lang.equals("")){
             startActivity(new Intent(getApplicationContext(),LanguageChoose.class));
             finish();
+        }else{
+            startActivity(new Intent(getApplicationContext(),MainPagerActivity.class));
+            finish();
         }
 
     }

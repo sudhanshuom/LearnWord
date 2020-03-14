@@ -4,11 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainPagerActivity">
 
-    <com.careerkick.counsellingservice.CustomViewPager
-        android:id = "@+id/viewpager"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tbb"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id = "@+id/tabs"
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            app:tabMode = "fixed"
+            app:tabGravity = "fill"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.example.alfreddemo.CustomViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/tbb"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

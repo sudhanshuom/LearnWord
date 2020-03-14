@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class MainPagerActivity extends AppCompatActivity {
 
     ViewPager vpPager;
+    private TabLayout tabLayout;
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -18,12 +21,14 @@ public class MainPagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_pager);
 
         vpPager = findViewById(R.id.viewpager);
+        tabLayout = findViewById(R.id.tabs);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Learn(), "Learn");
-        adapter.addFragment(new Examine2(), "Examine");
+        adapter.addFragment(new Examine(), "Examine");
 
         vpPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(vpPager);
     }
 
     @Override

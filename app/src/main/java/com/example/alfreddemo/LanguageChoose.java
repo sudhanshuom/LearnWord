@@ -32,8 +32,7 @@ public class LanguageChoose extends AppCompatActivity {
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                   selectedItem = parent.getItemAtPosition(position).toString();
                   tv.setVisibility(View.VISIBLE);
-                  tv.setTextSize(15.00f);
-                  tv.setText("GridView item clicked : " + selectedItem + "\nAt index position : " + position + "DONE");
+                  tv.setText("Selected Language : " + selectedItem + "\nClick here to learn");
               }
           }
         );
