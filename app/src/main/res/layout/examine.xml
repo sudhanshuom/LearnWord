@@ -3,10 +3,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="#FFFFFF"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:padding="10dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,16 +31,16 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Here to sign in or create an account"
-                    android:textSize="16dp" />
+                    android:text="@string/AccountNotice"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectangle"
-                android:backgroundTint="#ff4500"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_orange_filled"
                 android:orientation="vertical">
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:background="@drawable/rectangle"
                     android:gravity="center"
                     android:text="NUMBERS"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/startnumber"
@@ -59,15 +59,14 @@
                     android:gravity="center"
                     android:text="Start the level"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rectangle"
-                android:backgroundTint="#ff4500"
+                android:background="@drawable/rectangle_orange_filled"
                 android:orientation="vertical">
 
                 <TextView
@@ -77,7 +76,7 @@
                     android:background="@drawable/rectangle"
                     android:gravity="center"
                     android:text="Days of Week"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -85,15 +84,14 @@
                     android:gravity="center"
                     android:text="Start the level"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rectangle"
-                android:backgroundTint="#ff4500"
+                android:background="@drawable/rectangle_orange_filled"
                 android:orientation="vertical">
 
                 <TextView
@@ -103,7 +101,7 @@
                     android:background="@drawable/rectangle"
                     android:gravity="center"
                     android:text="Months of Year"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -111,15 +109,14 @@
                     android:gravity="center"
                     android:text="Start the level"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rectangle"
-                android:backgroundTint="#ff4500"
+                android:background="@drawable/rectangle_orange_filled"
                 android:orientation="vertical">
 
                 <TextView
@@ -129,7 +126,7 @@
                     android:background="@drawable/rectangle"
                     android:gravity="center"
                     android:text="Relationships"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -137,15 +134,14 @@
                     android:gravity="center"
                     android:text="Start the level"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rectangle"
-                android:backgroundTint="#ff4500"
+                android:background="@drawable/rectangle_orange_filled"
                 android:orientation="vertical">
 
                 <TextView
@@ -155,7 +151,7 @@
                     android:background="@drawable/rectangle"
                     android:gravity="center"
                     android:text="Food Items"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -163,7 +159,7 @@
                     android:gravity="center"
                     android:text="Start the level"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>

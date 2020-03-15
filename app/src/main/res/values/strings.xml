@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AlfredDemo</string>
+    <string name="AccountNotice">Create an account to see your progress. It\'s free and takes only few minutes :)  Click Here to sign in or create an account</string>
 </resources>

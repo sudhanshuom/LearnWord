@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/status"
@@ -21,8 +21,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Here to sign in or create an account"
-            android:textSize="16dp" />
+            android:text="@string/AccountNotice"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -39,9 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="left"
             android:text="Question:2/10"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -57,15 +56,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="@drawable/rectangle3"
             android:gravity="center"
             android:text="Correct Answer"
-            android:background="@drawable/rectangle3"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#000000"/>
+            android:background="#000000" />
 
         <TextView
             android:id="@+id/qq"
@@ -74,53 +73,53 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="What is the sum of 2+14?"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/o1"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="left"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:text="10"
             android:textColor="#000000"
-            android:textSize="20dp"
-            android:paddingLeft="10dp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/o2"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="left"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:text="25"
             android:textColor="#000000"
-            android:textSize="20dp"
-            android:paddingLeft="10dp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/o3"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="left"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:text="16"
             android:textColor="#000000"
-            android:textSize="20dp"
-            android:paddingLeft="10dp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/o4"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="left"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:text="30"
             android:textColor="#000000"
-            android:textSize="20dp"
-            android:paddingLeft="10dp"/>
+            android:textSize="20sp" />
 
         <View
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:background="#000000"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#000000" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,46 +134,47 @@
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:text="Complete 8 more questions to unlock next level."
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/outof"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
                 android:text="2 out of 10 Completed."
-                android:textSize="15dp"
-                android:paddingLeft="10dp"/>
+                android:textSize="15sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp">
 
                 <View
                     android:id="@+id/reff"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:background="@drawable/rectangle"/>
+                    android:background="@drawable/rectangle" />
 
                 <View
                     android:id="@+id/progresse3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangle"
-                    android:backgroundTint="#ff4500"
                     android:layout_centerVertical="true"
-                    android:layout_margin="1dp"/>
+                    android:layout_margin="1dp"
+                    android:background="@drawable/rectangle"
+                    android:backgroundTint="#ff4500" />
 
             </RelativeLayout>
 
             <View
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:background="#000000"
-                android:layout_height="1dp"/>
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
 
             <TextView
                 android:id="@+id/next"
@@ -182,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Next Question"
                 android:textAlignment="center"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

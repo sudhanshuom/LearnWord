@@ -2,17 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/rectangle"
-        android:orientation="vertical"
-        android:paddingBottom="40dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -28,14 +27,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="Tap the question to review the answer"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:padding="5dp"/>
+            android:textSize="18sp" />
 
         <GridView
+            android:id="@+id/summarygv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="400dp" />
+
+        <TextView
+            android:id="@+id/backsum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle2"
+            android:backgroundTint="#FF7C54"
+            android:padding="5dp"
+            android:text="DONE"
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

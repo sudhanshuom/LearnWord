@@ -9,21 +9,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
 public class OTP extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.otp);
-        Button btn=findViewById(R.id.btngo);
-          btn.setOnClickListener(new View.OnClickListener()
-          {
+        Button btn = findViewById(R.id.btngo);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent in=new Intent(getBaseContext(),LanguageChoose.class);
+            public void onClick(View v) {
+                Intent in = new Intent(getBaseContext(), LanguageChoose.class);
                 startActivity(in);
             }
-          });
+        });
     }
 }

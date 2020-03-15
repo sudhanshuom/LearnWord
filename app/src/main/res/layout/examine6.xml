@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
     android:clickable="true"
     android:focusable="true">
@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle"
-        android:orientation="vertical"
-        android:paddingBottom="40dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -41,6 +40,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/quese6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle"
@@ -58,6 +58,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/corre6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle"
@@ -75,6 +76,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/opte6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle"
@@ -91,16 +93,47 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="20sp" />
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectangle"
-                android:padding="15dp"
-                android:text="XXXXX XXXX XXXXX XXXX XXXX XXX"
-                android:textSize="20sp" />
+                android:background="@drawable/rectangle">
+
+                <ImageView
+                    android:id="@+id/imge6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00FF00"
+                    android:src="@drawable/correct" />
+
+                <TextView
+                    android:id="@+id/rese6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/imge6"
+                    android:layout_toRightOf="@id/imge6"
+                    android:padding="15dp"
+                    android:text="XXXXX XXXX XXXXX XXXX"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rectangle2"
+            android:backgroundTint="#5151FF"
+            android:text="Back"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            tools:targetApi="lollipop" />
+
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

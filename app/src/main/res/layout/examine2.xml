@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -28,7 +28,7 @@
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Here to sign in or create an account"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -45,9 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:gravity="left"
                 android:text="Question:2/10"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -63,55 +62,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/rectangle"
                 android:backgroundTint="#ff4500"
+                android:gravity="center"
                 android:text="What is the sum of 2+14?"
-                android:textSize="20dp" />
+                android:textSize="20sp"
+                tools:targetApi="lollipop" />
 
 
             <TextView
                 android:id="@+id/tv1"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:gravity="left"
+                android:paddingStart="10dp"
                 android:paddingLeft="10dp"
                 android:text="10"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:gravity="left"
+                android:paddingStart="10dp"
                 android:paddingLeft="10dp"
                 android:text="25"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:gravity="left"
+                android:paddingStart="10dp"
                 android:paddingLeft="10dp"
                 android:text="16"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:gravity="left"
+                android:paddingStart="10dp"
                 android:paddingLeft="10dp"
                 android:text="30"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/exite2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rectangle_orange_filled"
+        android:padding="10dp"
+        android:text="EXIT"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
 </RelativeLayout>

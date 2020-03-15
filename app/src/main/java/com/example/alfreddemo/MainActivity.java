@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String lang = sh.getString("language", "");
 
-        if(lang.equals("")){
-            startActivity(new Intent(getApplicationContext(),LanguageChoose.class));
+        if (lang.equals("")) {
+            startActivity(new Intent(getApplicationContext(), LanguageChoose.class));
             finish();
-        }else{
-            startActivity(new Intent(getApplicationContext(),MainPagerActivity.class));
+        } else {
+            startActivity(new Intent(getApplicationContext(), MainPagerActivity.class));
             finish();
         }
 

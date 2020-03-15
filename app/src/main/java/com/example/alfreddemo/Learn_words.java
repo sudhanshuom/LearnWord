@@ -27,21 +27,23 @@ public class Learn_words extends Fragment {
     LinearLayout wordll, meaningll;
     View progressMastered, progressReviewed, progressLearning, reference;
 
-    public Learn_words(){}
+    public Learn_words() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                      Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.learn_words, container, false);
 
         TextView tap = view.findViewById(R.id.tap);
         TextView knew = view.findViewById(R.id.knew);
+        TextView back = view.findViewById(R.id.backlw);
         stats = view.findViewById(R.id.stats);
         TextView dontknew = view.findViewById(R.id.dontknew);
 
         /*
-        * Setting progress to progressbar
-        * */
+         * Setting progress to progressbar
+         * */
         progressMastered = view.findViewById(R.id.progress);
         progressReviewed = view.findViewById(R.id.progress2);
         progressLearning = view.findViewById(R.id.progress3);
@@ -52,7 +54,7 @@ public class Learn_words extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
         }
 
@@ -101,6 +103,13 @@ public class Learn_words extends Fragment {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().remove(Learn_words.this).commit();
+            }
+        });
+
         ViewTreeObserver observer = view.getViewTreeObserver();
 
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -118,9 +127,9 @@ public class Learn_words extends Fragment {
 
                 Log.e("width", width + " ");
 
-                layoutParams.width = (int) (Math.ceil((double)(width/50))*10);
-                layoutParams2.width = (int) (Math.ceil((double)(width/50))*20);
-                layoutParams3.width = (int) (Math.ceil((double)(width/50))*50);
+                layoutParams.width = (int) (Math.ceil((double) (width / 50)) * 10);
+                layoutParams2.width = (int) (Math.ceil((double) (width / 50)) * 20);
+                layoutParams3.width = (int) (Math.ceil((double) (width / 50)) * 50);
 
                 progressMastered.setLayoutParams(layoutParams);
                 progressReviewed.setLayoutParams(layoutParams2);
@@ -132,12 +141,12 @@ public class Learn_words extends Fragment {
     }
 
     //From Database see meaning
-    private void seeMeaning(String w){
+    private void seeMeaning(String w) {
         word.setText("ONE");
     }
 
     //From Database search new word
-    private void searchNextWord(){
+    private void searchNextWord() {
         currentWord = "Miyad";
         word.setText(currentWord);
     }

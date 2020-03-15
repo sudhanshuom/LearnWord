@@ -46,7 +46,7 @@ public class MainPagerActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }

@@ -1,7 +1,5 @@
 package com.example.alfreddemo;
 
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -18,7 +17,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class Examine extends Fragment {
     LinearLayout loginWindow;
 
-    public Examine(){}
+    public Examine() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +30,7 @@ public class Examine extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
         }
 
@@ -60,9 +60,9 @@ public class Examine extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             loginWindow.setVisibility(View.GONE);
         }
     }

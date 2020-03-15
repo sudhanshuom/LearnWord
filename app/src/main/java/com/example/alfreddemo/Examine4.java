@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 
 public class Examine4 extends Fragment {
@@ -19,7 +21,8 @@ public class Examine4 extends Fragment {
     View corrpg, incorrpg, ref;
     Button retake;
 
-    public Examine4(){ }
+    public Examine4() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,7 +46,14 @@ public class Examine4 extends Fragment {
         summary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Fragment fragment = new Summary();
+                Bundle args = new Bundle();
+                args.putString("questions", getArguments().getString("questions"));
+                args.putString("correctOption", getArguments().getString("correctOption"));
+                args.putString("optedOption", getArguments().getString("optedOption"));
+                fragment.setArguments(args);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.host_view_examine, fragment).commit();
             }
         });
 
@@ -70,8 +80,8 @@ public class Examine4 extends Fragment {
 
                 Log.e("width", width + " ");
 
-                layoutParams.width = (int) ((double)(width/10)*corr);
-                layoutParams2.width = (int) ((double)(width/10)*(10 - corr));
+                layoutParams.width = (int) ((double) (width / 10) * corr);
+                layoutParams2.width = (int) ((double) (width / 10) * (10 - corr));
 
                 corrpg.setLayoutParams(layoutParams);
                 incorrpg.setLayoutParams(layoutParams2);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -15,7 +14,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,17 +35,17 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Here to sign in or create an account"
-                        android:textSize="16dp" />
+                        android:text="@string/AccountNotice"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/rectangle_orange_filled"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp">
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="NUMBERS"
-                            android:textSize="20dp" />
+                            android:textSize="20sp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -90,7 +89,7 @@
                         android:gravity="center"
                         android:text="Study these words"
                         android:textColor="#000000"
-                        android:textSize="15dp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -113,7 +112,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Days of Week"
-                            android:textSize="20dp" />
+                            android:textSize="20sp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -141,7 +140,7 @@
                         android:gravity="center"
                         android:text="Study these words"
                         android:textColor="#000000"
-                        android:textSize="15dp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -164,7 +163,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Months of Year"
-                            android:textSize="20dp" />
+                            android:textSize="20sp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -192,7 +191,7 @@
                         android:gravity="center"
                         android:text="Study these words"
                         android:textColor="#000000"
-                        android:textSize="15dp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -215,7 +214,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Relationships"
-                            android:textSize="20dp" />
+                            android:textSize="20sp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -243,7 +242,7 @@
                         android:gravity="center"
                         android:text="Study these words"
                         android:textColor="#000000"
-                        android:textSize="15dp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -266,7 +265,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Food Items"
-                            android:textSize="20dp" />
+                            android:textSize="20sp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -294,7 +293,7 @@
                         android:gravity="center"
                         android:text="Study these words"
                         android:textColor="#000000"
-                        android:textSize="15dp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -307,6 +306,6 @@
         android:id="@+id/host_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true" />
 
 </RelativeLayout>

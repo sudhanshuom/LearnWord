@@ -28,13 +28,13 @@ public class LanguageChoose extends AppCompatActivity {
         LangAdapter adapter = new LangAdapter(getBaseContext());
         gv.setAdapter(adapter);
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-              @Override
-              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                  selectedItem = parent.getItemAtPosition(position).toString();
-                  tv.setVisibility(View.VISIBLE);
-                  tv.setText("Selected Language : " + selectedItem + "\nClick here to learn");
-              }
-          }
+                                      @Override
+                                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                          selectedItem = parent.getItemAtPosition(position).toString();
+                                          tv.setVisibility(View.VISIBLE);
+                                          tv.setText("Selected Language : " + selectedItem + "\nClick here to learn");
+                                      }
+                                  }
         );
 
         tv.setOnClickListener(new View.OnClickListener() {

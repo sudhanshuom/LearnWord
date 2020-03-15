@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/status"
@@ -23,8 +22,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Create an account to see your progress. It's free and takes only few minutes :)\n Click Box to sign in or create an account"
-            android:textSize="16dp" />
+            android:text="@string/AccountNotice"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -38,25 +37,18 @@
             android:id="@+id/wordll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rectangle"
-            android:backgroundTint="#ff4500"
+            android:background="@drawable/rectangle_orange_filled"
             android:orientation="vertical"
             android:visibility="visible">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/word"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle">
-
-                <TextView
-                    android:id="@+id/word"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:gravity="center"
-                    android:text="NUMBERS"
-                    android:textSize="20dp" />
-
-            </RelativeLayout>
+                android:layout_height="120dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center"
+                android:text="NUMBERS"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tap"
@@ -65,7 +57,7 @@
                 android:gravity="center"
                 android:text="Tap To See meaning"
                 android:textColor="#000000"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -85,24 +77,25 @@
                     android:id="@+id/bookmark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bookmark"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/bookmark" />
 
                 <ImageView
                     android:id="@+id/speak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/speak"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/speak" />
 
                 <TextView
                     android:id="@+id/meaning"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:text="XXXXXX"
-                    android:textSize="20dp"
                     android:layout_below="@id/speak"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="XXXXXX"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -110,20 +103,20 @@
                 android:id="@+id/knew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I knew the meaning"
                 android:background="#4BFF7D"
-                android:textSize="18dp"
-                android:textAlignment="center"/>
+                android:text="I knew the meaning"
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/dontknew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I didn't knew the meaning"
                 android:background="@drawable/rectangle2"
                 android:backgroundTint="#FF7676"
-                android:textSize="18dp"
-                android:textAlignment="center"/>
+                android:text="I didn't knew the meaning"
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -132,18 +125,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="New Word"
-            android:layout_marginTop="5dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="New Word" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You have mastered 10 out of 50 words"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="You have mastered 10 out of 50 words" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -154,24 +148,24 @@
             android:id="@+id/ref"
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:background="@drawable/rectangle"/>
+            android:background="@drawable/rectangle" />
 
         <View
             android:id="@+id/progress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rectangle"
-            android:backgroundTint="#ff4500"
             android:layout_centerVertical="true"
-            android:layout_margin="1dp"/>
+            android:layout_margin="1dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ff4500" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You are reviewing 20 out of 50 words"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="You are reviewing 20 out of 50 words" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -181,24 +175,24 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:background="@drawable/rectangle"/>
+            android:background="@drawable/rectangle" />
 
         <View
             android:id="@+id/progress2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rectangle"
-            android:backgroundTint="#ff4500"
             android:layout_centerVertical="true"
-            android:layout_margin="1dp"/>
+            android:layout_margin="1dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ff4500" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You are learning 50 out of 50 words"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="You are learning 50 out of 50 words" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -208,17 +202,30 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:background="@drawable/rectangle"/>
+            android:background="@drawable/rectangle" />
 
         <View
             android:id="@+id/progress3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rectangle"
-            android:backgroundTint="#ff4500"
             android:layout_centerVertical="true"
-            android:layout_margin="1dp"/>
+            android:layout_margin="1dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ff4500" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/backlw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rectangle"
+        android:padding="15dp"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
 </LinearLayout>

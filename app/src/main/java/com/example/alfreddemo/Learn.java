@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -28,7 +29,7 @@ public class Learn extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
         }
 
@@ -44,13 +45,12 @@ public class Learn extends Fragment {
             public void onClick(View v) {
                 fragment = new Learn_words();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.host_view, fragment).commit();
+                fragmentManager.beginTransaction().add(R.id.host_view, fragment).commit();
             }
         });
 
         return view;
     }
-
 
 
     @Override
@@ -60,9 +60,9 @@ public class Learn extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             loginWindow.setVisibility(View.GONE);
         }
     }

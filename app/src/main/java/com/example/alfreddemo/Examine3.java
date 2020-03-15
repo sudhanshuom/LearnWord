@@ -26,7 +26,8 @@ public class Examine3 extends Fragment {
 
     View ref, prog;
 
-    public Examine3(){ }
+    public Examine3() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,7 +52,7 @@ public class Examine3 extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
         }
 
@@ -79,27 +80,27 @@ public class Examine3 extends Fragment {
         o3t.setText(o3);
         o4t.setText(o4);
 
-        if(corr.equals("true")){
-            if(clicked.equals(o1))
+        if (corr.equals("true")) {
+            if (clicked.equals(o1))
                 o1t.setTextColor(Color.parseColor("#00FF00"));
-            if(clicked.equals(o2))
+            if (clicked.equals(o2))
                 o2t.setTextColor(Color.parseColor("#00FF00"));
-            if(clicked.equals(o3))
+            if (clicked.equals(o3))
                 o3t.setTextColor(Color.parseColor("#00FF00"));
-            if(clicked.equals(o4))
+            if (clicked.equals(o4))
                 o4t.setTextColor(Color.parseColor("#00FF00"));
-        }else{
-            if(clicked.equals(o1))
+        } else {
+            if (clicked.equals(o1))
                 o1t.setTextColor(Color.parseColor("#FF0000"));
-            if(clicked.equals(o2))
+            if (clicked.equals(o2))
                 o2t.setTextColor(Color.parseColor("#FF0000"));
-            if(clicked.equals(o3))
+            if (clicked.equals(o3))
                 o3t.setTextColor(Color.parseColor("#FF0000"));
-            if(clicked.equals(o4))
+            if (clicked.equals(o4))
                 o4t.setTextColor(Color.parseColor("#FF0000"));
         }
 
-        if(count == 10){
+        if (count == 10) {
             next.setText("Your Score");
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -107,12 +108,15 @@ public class Examine3 extends Fragment {
                     Fragment fragment = new Examine4();
                     Bundle args = new Bundle();
                     args.putString("correct_count", getArguments().getString("correct_count"));
+                    args.putString("questions", getArguments().getString("questions"));
+                    args.putString("correctOption", getArguments().getString("correctOption"));
+                    args.putString("optedOption", getArguments().getString("optedOption"));
                     fragment.setArguments(args);
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.host_view_examine, fragment).commit();
                 }
             });
-        }else{
+        } else {
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -121,17 +125,18 @@ public class Examine3 extends Fragment {
             });
         }
 
-        complete.setText("Complete " + (10 - count) +" more questions to unlock next level.");
+        complete.setText("Complete " + (10 - count) + " more questions to unlock next level.");
         outof.setText(count + " out of 10 Completed.");
 
-        if(corr.equals("true")){
+        if (corr.equals("true")) {
             res.setText("Correct Answer");
-            res.setBackground(getResources().getDrawable(R.drawable.corr_bg));;
-        }else{
+            res.setBackground(getResources().getDrawable(R.drawable.corr_bg));
+            ;
+        } else {
             res.setText("Incorrect Answer");
-            res.setBackground(getResources().getDrawable(R.drawable.incorr_bg));;
+            res.setBackground(getResources().getDrawable(R.drawable.incorr_bg));
+            ;
         }
-
 
 
         ViewTreeObserver observer = view.getViewTreeObserver();
@@ -149,7 +154,7 @@ public class Examine3 extends Fragment {
 
                 Log.e("width", width + " ");
 
-                layoutParams.width = (int) (Math.ceil((double)(width/10))*count);
+                layoutParams.width = (int) (Math.ceil((double) (width / 10)) * count);
 
                 prog.setLayoutParams(layoutParams);
             }

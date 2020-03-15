@@ -28,12 +28,15 @@ public class Examine2 extends Fragment {
             "What is the sum of 2+14?"};
     String options[] = {"10", "25", "16", "30"};
     int corr = 0;
+    String optedOption = "", correctOption = "", questions = "";
     String opted[] = new String[10];
     int i = 0;
     boolean correct[] = new boolean[10];
-    TextView tv1, tv2, tv3, tv4, qno, question;
+    TextView tv1, tv2, tv3, tv4, qno, question, exit;
     RelativeLayout progressbar;
-    public Examine2(){}
+
+    public Examine2() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +47,7 @@ public class Examine2 extends Fragment {
         tv2 = view.findViewById(R.id.tv2);
         tv3 = view.findViewById(R.id.tv3);
         tv4 = view.findViewById(R.id.tv4);
+        exit = view.findViewById(R.id.exite2);
         question = view.findViewById(R.id.question);
         qno = view.findViewById(R.id.ques_no);
 
@@ -52,7 +56,7 @@ public class Examine2 extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
         }
 
@@ -91,12 +95,19 @@ public class Examine2 extends Fragment {
             }
         });
 
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().remove(Examine2.this).commit();
+            }
+        });
+
         return view;
     }
 
-    private void setNextQuestion(){
+    private void setNextQuestion() {
 
-        if(i >= 10){
+        if (i >= 10) {
 
             return;
         }
@@ -105,7 +116,7 @@ public class Examine2 extends Fragment {
         tv3.setClickable(true);
         tv4.setClickable(true);
 
-        qno.setText("Question:" + (i+1) + "/10");
+        qno.setText("Question:" + (i + 1) + "/10");
         question.setText(ques[i]);
         tv1.setText(options[0]);
         tv2.setText(options[1]);
@@ -114,30 +125,38 @@ public class Examine2 extends Fragment {
         i++;
     }
 
-    private void checkAnswer(TextView tv){
-        opted[i-1] = tv.getText().toString();
-        if(tv.getText().toString().equals("16")){
-            correct[i-1] = true;
+    private void checkAnswer(TextView tv) {
+        opted[i - 1] = tv.getText().toString();
+        if (tv.getText().toString().equals("16")) {
+            correct[i - 1] = true;
             corr++;
         }
+        optedOption += tv.getText().toString() + "@@@@";
+        correctOption += "16" + "@@@@";
+        questions += ques[i - 1] + "@@@@";
 
         Fragment fragment = new Examine3();
         Bundle args = new Bundle();
-        args.putString("ques", ques[i-1]);
-        args.putString("corr", correct[i-1] + "");
+        args.putString("ques", ques[i - 1]);
+        args.putString("corr", correct[i - 1] + "");
         args.putString("o1", "10");
         args.putString("o2", "25");
         args.putString("o3", "16");
         args.putString("o4", "30");
         args.putString("clicked", tv.getText().toString());
-        args.putString("count", i+"");
+        args.putString("count", i + "");
         args.putString("correct_count", corr + "");
-        fragment.setArguments(args);
 
-        if(i == 10) {
+        if (i == 10) {
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            args.putString("questions", questions);
+            args.putString("correctOption", correctOption);
+            args.putString("optedOption", optedOption);
+            fragment.setArguments(args);
+
             fragmentManager.beginTransaction().replace(R.id.host_view_examine, fragment).commit();
-        }else{
+        } else {
+            fragment.setArguments(args);
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             fragmentManager.beginTransaction().add(R.id.host_view_examine, fragment).commit();
         }
@@ -157,9 +176,9 @@ public class Examine2 extends Fragment {
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String user = sh.getString("user", "");
 
-        if(user.equals("")){
+        if (user.equals("")) {
             loginWindow.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             loginWindow.setVisibility(View.GONE);
         }
     }
